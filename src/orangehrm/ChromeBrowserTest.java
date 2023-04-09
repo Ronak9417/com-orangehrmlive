@@ -1,3 +1,5 @@
+package orangehrm;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +22,7 @@ public class ChromeBrowserTest {
         //maximise the Browser
         driver.manage().window().maximize();
         //We give Implicit wait to driver
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(55));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
         //Get the title of the page
         String title = driver.getTitle();
@@ -33,15 +35,14 @@ public class ChromeBrowserTest {
         System.out.println("Page source : " + driver.getPageSource());
 
         // Find the Username field element
-        WebElement username = driver.findElement(By.name("username"));
-        username.sendKeys("Ronak");
+        WebElement usernameField = driver.findElement(By.name("username"));
+        usernameField.sendKeys("Ronak Patel");
 
         // Find the password field element and type the password
         driver.findElement(By.name("password")).sendKeys("prime123");
 
         //Close the browser
         driver.close();
-
 
     }
 
